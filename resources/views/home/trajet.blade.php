@@ -5,7 +5,7 @@
 
     <ul>
         <li>Départ : {{ $trajet->date_heure->format('d/m/Y à H:i') }}</li>
-        <li>Places restantes : {{ $trajet->places_restantes }} / {{ $trajet->places_totales }}</li>
+        <li>Places restantes : {{ $trajet->placesRestantes() }} / {{ $trajet->places_totales }}</li>
         <li>Prix : {{ $trajet->prix > 0 ? $trajet->prix . ' FCFA' : 'Gratuit' }}</li>
         <li>Statut : {{ $trajet->statut }}</li>
         <li>Conducteur : {{ $trajet->conducteur->nom }}</li>

@@ -7,11 +7,16 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Reservation extends Model
 {
-    protected $table = 'reservations';
+    public const EN_ATTENTE = 'En attente';
+    public const CONFIRMEE = 'Confirmée';
+    public const REFUSEE = 'Refusée';
+    public const ANNULEE = 'Annulée';
+
+    protected $primaryKey = 'id_reservation';
 
     public $timestamps = false;
 
-    protected $fillable = ['statut', 'date_reservation', 'id_trajet', 'id_passager'];
+    protected $fillable = ['id_trajet', 'id_passager', 'prix', 'statut'];
 
     protected function casts(): array
     {

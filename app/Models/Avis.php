@@ -9,9 +9,11 @@ class Avis extends Model
 {
     protected $table = 'avis';
 
+    protected $primaryKey = 'id_avis';
+
     public $timestamps = false;
 
-    protected $fillable = ['note', 'commentaire', 'date', 'id_trajet', 'id_auteur', 'id_cible'];
+    protected $fillable = ['id_trajet', 'id_auteur', 'id_cible', 'note', 'commentaire'];
 
     protected function casts(): array
     {
